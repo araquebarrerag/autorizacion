@@ -12,8 +12,12 @@ export class CuentaServiceService {
   constructor(private http: HttpClient) { }
 
 
-  crearCuenta(cuenta: {}) {
-    return this.http.post(this.url + '/cuenta', cuenta).subscribe((result) => console.log(result));
+  public crearCuenta(cuenta: any) {
+    return this.http.post(this.url + '/cuenta', cuenta);
+  }
+
+  public cargarCuenta(id: any) {
+    return this.http.get(this.url + '/cuenta/' + id);
   }
 
 }

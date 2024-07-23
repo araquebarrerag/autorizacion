@@ -43,7 +43,6 @@ export class CuentaComponentComponent {
   }
 
   guardar() {
-    console.log(this.cuentaForm.value);
     var tarjeta_activa;
     var array = {};
 
@@ -63,8 +62,24 @@ export class CuentaComponentComponent {
           "límite_disponible": this.cuentaForm.value.limite_disponible
         }
       }
-      console.log("Arreglo: ", array)
-      this.cuentaService.crearCuenta(array);
+      this.cuentaService.cargarCuenta(this.cuentaForm.value.id).subscribe(cuenta => {
+        if (cuenta == null || cuenta == undefined) {
+          this.cuentaService.crearCuenta(array).subscribe(crearCuenta => {
+            array = {
+              cuenta,
+              "violaciones": []
+            }
+            console.log(array);
+          });
+        }
+        else {
+          array = {
+            cuenta,
+            "violaciones": ["Cuenta ya esta inicializada"]
+          }
+          console.log(array);
+        }
+      })
     } else if (this.cuentaForm.value.id == '' || this.cuentaForm.value.id == null || this.cuentaForm.value.id == undefined) {
       alert("Ingrese un id");
     } else if (this.cuentaForm.value.tarjeta_activa == '' || this.cuentaForm.value.tarjeta_activa == null || this.cuentaForm.value.tarjeta_activa == undefined) {

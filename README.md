@@ -1,27 +1,23 @@
-# Autorizador
+## Descargar Repositorio
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.3.
+Este proyecto se realizo con AngularyNode JS, para poder correrlode manera local puede clonarlo con el comando `git clone https://github.com/araquebarrerag/autorizacion.git`.
 
-## Development server
+## Instalar dependencias
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Para instalar las dependencias de Angular corremos el comando `npm install` desde la carpeta raiz del repositorio, despues nos dirigimos a la carpeta `back` y ejecutamos el mismo comando 
+`npm install` esto es para instalar las dependencias de NodeJs
 
-## Code scaffolding
+## Iniciar el servicio de back con NodeJS
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Nos dirigimos el directorio `back` y ejecutamos el comando `node index.js`, este comando corre el archivo index.js el cual es el archivo principal del servicio de back. Cuando ejecutemos
+el comando nos mostrara el mensaje `BackEnd corriendo en el puerto:  8080` que nos indica que el servicio se esta ejecutando en la url: `http://localhost:8080` para poder acceder a el
+desde Angular
 
-## Build
+## Iniciar el servicio de front con Angular
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Cuando este corriendo el servicio de back podemos volver al directorio raiz del proyecto, aqui ejecutamos el comando `ng build` para ver si corre bien el servicio, y despues
+ejecutamos `ng serve` para iniciar el servicio. Cuando ejecutamos estos comandos nos mostrara este mensaje `** Angular Live Development Server is listening on localhost:4200, open your browser on http://localhost:4200/ **` el cual nos muestra como podemos acceder al servicio desde el navegador
 
-## Running unit tests
+## Ver el proyecto
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Cuando ya este corriendo el servicio de front y back podemos acceder desde el navegador a esta direccion: `http://localhost:4200/` y podremos empezar a navegar en el aplicativo.
