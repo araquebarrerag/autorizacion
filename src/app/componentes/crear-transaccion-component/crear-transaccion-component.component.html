@@ -1,0 +1,52 @@
+<form [formGroup]="transaccionForm">
+    <div class="col s12 card no-margin color-background margin-top hoverable min-size">
+        <div class="col s12 header center margin-top">
+            <h4>
+                Crear Transaccion
+            </h4>
+        </div>
+        <div class="col s12">
+            <br>
+        </div>
+        <div class="col s12 no-margin">
+            <div class="col s1"></div>
+            <div class="col s4 item">
+                <div class="col m4 s12 no-margin question color-principal size-one" style="text-align:center">
+                    Id
+                </div>
+                <div class="input-field col s12 m8">
+                    <input type="text" class="validate" formControlName="id" placeholder="idCuenta" required>
+                </div>
+            </div>
+            <div class="col s2"></div>
+            <div class="col s4 item">
+                <div class="col m5 s12 no-margin question color-principal size-one" style="text-align:center">
+                    Comerciante
+                </div>
+                <div class="input-field col s12 m7">
+                    <input type="text" class="validate" formControlName="comerciante" placeholder="Comerciante" required
+                        pattern="[A-Z]{1,100}">
+                </div>
+            </div>
+        </div>
+        <div class="col s12">
+            <br>
+        </div>
+        <div class="col s12 no-margin">
+            <div class="col s4"></div>
+            <div class="col s4 item">
+                <div class="col m4 s12 no-margin question color-principal size-one" style="text-align:center">
+                    Cantidad
+                </div>
+                <div class="input-field col s12 m8">
+                    <input type="number" class="validate" formControlName="cantidad" required>
+                </div>
+            </div>
+        </div>
+        <div class="col s12 margin-top center">
+            <a (click)="guardar()" class="teal darken-2 waves-effect waves-light btn">
+                Realizar Transaccion
+            </a>
+        </div>
+    </div>
+</form>

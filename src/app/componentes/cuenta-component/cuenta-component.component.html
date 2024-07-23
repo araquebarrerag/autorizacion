@@ -1,0 +1,59 @@
+<form [formGroup]="cuentaForm">
+    <div class="col s12 card no-margin color-background margin-top hoverable min-size">
+        <div class="col s12 header center margin-top">
+            <h4>
+                Crear Cuenta
+            </h4>
+        </div>
+        <div class="col s12">
+            <br>
+        </div>
+        <div class="col s12 no-margin">
+            <div class="col s1">
+            </div>
+            <div class="col s4 item">
+                <div class="col m4 s12 no-margin question color-principal size-one" style="text-align:center">
+                    Id
+                </div>
+                <div class="input-field col s12 m8">
+                    <input type="text" class="validate" formControlName="id" placeholder="id" required>
+                </div>
+            </div>
+            <div class="col s2">
+            </div>
+            <div class="col s4 item">
+                <div class="col m5 s12 no-margin question color-principal size-one" style="text-align:center">
+                    Limite Disponible
+                </div>
+                <div class="input-field col s12 m7">
+                    <input type="number" class="validate" formControlName="limite_disponible" required>
+                </div>
+            </div>
+        </div>
+        <div class="col s12">
+            <br>
+        </div>
+        <div class="col s12 no-margin">
+            <div class="col s4">
+            </div>
+            <div class="col s4 item">
+                <div class="col m4 s12 no-margin question color-principal size-one" style="text-align:center">
+                    Tarjeta Activa
+                </div>
+                <div class="input-field col s12 m8">
+                    <select class="browser-default tooltipped" data-position="right" data-tooltip="Seleccione el tipo"
+                        formControlName="tarjeta_activa" required>
+                        <option value="">Seleccione una opcion...</option>
+                        <option value="0">Si</option>
+                        <option value="1">No</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="col s12 margin-top center">
+            <a (click)="guardar()" class="teal darken-2 waves-effect waves-light btn">
+                Guardar Cuenta
+            </a>
+        </div>
+    </div>
+</form>
