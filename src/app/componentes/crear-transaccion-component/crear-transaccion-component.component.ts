@@ -72,6 +72,7 @@ export class CrearTransaccionComponentComponent {
                 },
                 "violaciones": []
               }
+              this.transaccionService.crearTransaccion(array);
             } else {
               array = {
                 "cuenta": {
